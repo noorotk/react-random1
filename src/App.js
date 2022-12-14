@@ -1,23 +1,23 @@
-import { Route } from "react-router-dom";
-import Welcome from "./pages/Welcome";
-import Products from "./pages/Products";
-import MainHeader from "./components/MainHeader";
-import ProductDetails from "./pages/ProductDetails";
-import { Switch } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
+
+import AllQuotes from "./pages/AllQuotes";
+import NewQuote from "./pages/NewQuote";
+import QuoteDetail from "./pages/QuoteDetail";
 function App() {
   return (
     <div>
-      <div>test</div>
-      <MainHeader />
       <Switch>
-        <Route path="/welcome">
-          <Welcome />
+        <Route path="/" exact>
+          <Redirect to="/quotes" />
         </Route>
-        <Route path="/products" exact>
-          <Products />
+        <Route path="/quotes" exact>
+          <AllQuotes />
         </Route>
-        <Route path="/products/:productId">
-          <ProductDetails />
+        <Route path="/quotes/:quoteId">
+          <QuoteDetail />
+        </Route>
+        <Route path="/new-quote">
+          <NewQuote />
         </Route>
       </Switch>
     </div>
