@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Route, useParams } from "react-router-dom";
 import Comments from "../components/comments/Comments";
 const QuoteDetail = () => {
+  //dq1
   const params = useParams();
   return (
     <Fragment>
